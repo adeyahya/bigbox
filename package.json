@@ -1,5 +1,5 @@
 {
-  "name": "bigbox",
+  "name": "@adeyahya/bigbox",
   "version": "0.1.0",
   "description": "Collection of js utils and helpers",
   "main": "src/index.ts",
