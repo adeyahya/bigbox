@@ -1,0 +1,29 @@
+{
+  "name": "bigbox",
+  "version": "0.1.0",
+  "description": "Collection of js utils and helpers",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "types": "src/index.ts",
+  "repository": {
+    "url": "https://github.com/adeyahya/bigbox"
+  },
+  "author": "adeyahya",
+  "private": false,
+  "license": "MIT",
+  "scripts": {
+    "check": "npm run lint && npm run test && npm run build",
+    "build": "tsc --noEmit && yarn rollup -c",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\" --ignore-unknown"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.0",
+    "prettier": "^2.7.1",
+    "prettier-plugin-organize-imports": "^3.0.3",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
