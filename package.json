@@ -1,6 +1,6 @@
 {
   "name": "@adeyahya/bigbox",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Collection of js utils and helpers",
   "main": "src/index.ts",
   "module": "src/index.ts",
@@ -18,6 +18,7 @@
     "format:check": "prettier --check \"src/**/*.ts\" --ignore-unknown"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/node": "^22.5.0",
     "prettier": "^2.7.1",
     "prettier-plugin-organize-imports": "^3.0.3",
@@ -25,5 +26,8 @@
   },
   "engines": {
     "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1"
   }
 }
