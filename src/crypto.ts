@@ -18,7 +18,7 @@ export const hashPassword = (password: string): Promise<string> => {
 
 export const comparePassword = (password: string, hash: string) => bcrypt.compare(password, hash)
 
-export const encrypt = (text: string, password: string) => new Promise((resolve, reject) => {
+export const encrypt = (text: string, password: string) => new Promise<string>((resolve, reject) => {
   const salt = crypto.randomBytes(16);
   crypto.pbkdf2(password, salt, 100000, 32, alghorithm, (err, key) => {
     if (err) return reject(err);
@@ -31,7 +31,7 @@ export const encrypt = (text: string, password: string) => new Promise((resolve,
   });
 })
 
-export const decrypt = async (encrypted: string, password: string) => new Promise((resolve, reject) => {
+export const decrypt = async (encrypted: string, password: string) => new Promise<string>((resolve, reject) => {
   const [ivHex, saltHex, encryptedDataHex] = encrypted.split(':');
   const iv = Buffer.from(ivHex, 'hex');
   const salt = Buffer.from(saltHex, 'hex');

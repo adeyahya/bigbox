@@ -6,8 +6,10 @@ export const parseStream = async (res: object & {
   body?: null | {
     getReader: () => ReadableStreamDefaultReader<any>
   }
-}, cb: (val: string) => void) => {
-  if (!res.body) return
+}, cb: (val: string) => void): Promise<void> => {
+  if (!res.body) {
+    throw new Error("Body not found")
+  }
   const reader = res.body.getReader();
   let isDone = false;
   while (!isDone) {
